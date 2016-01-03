@@ -1,0 +1,16 @@
+{
+  "name": "CodeSample_SortableTable",
+  "version": "0.0.0",
+  "description": "",
+  "main": "CodeSample_SortableTable.html",
+  "scripts": {
+    "test": "mocha /test/test.js"
+  },
+  "author": "Leah C. Whittaker",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^3.2.0",
+    "jsdoc": "^3.3.2",
+    "mocha": "^2.2.5"
+  }
+}

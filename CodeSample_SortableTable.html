@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+
+  	<script src="./js/JSONLoader.js"></script>
+  	<script src="./js/Sorter.js"></script>
+  	<script src="./js/SortTable.js"></script>
+  	<script src="./js/FormatUtils.js"></script>
+  	<script src="./js/PolicyTable.js"></script>
+
+  	<script>
+
+		function init() {
+			JSONLoader.load("./json/HealthPlans.json", createPolicyTable, loadFail);
+		}
+
+		function createPolicyTable(data) {
+			var policyTable = new PolicyTable(document.getElementById("content"), data);
+		}
+
+		function loadFail() {
+			console.log("loadFail")
+			document.getElementById("content").innerHTML = "JSON Failed to Load."
+		}
+
+		window.onload = init;
+
+	</script>
+
+  	<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+	<style>
+		html {
+			font-family: 'Lato', Helvetica, sans-serif
+		}
+		table, th, td {
+		    border: 1px solid black;
+		    border-collapse: collapse;
+		}
+		th, td {
+		    padding: 5px;
+			padding: 0.5em 0.8em;
+		}
+		th {
+			cursor: pointer;
+			color: #FFFFFF;
+			background-color: #2fade3;
+			text-align: left;
+		}
+	</style>
+
+</head>
+<body>
+	<div id="wrapper">
+		<div id="header">
+			<h1 id="title">Code Sample - Sortable Table</h1>
+		</div>
+
+		<div id="content"></div>
+	</div>
+</body>
+</html>
